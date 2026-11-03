@@ -2,7 +2,7 @@
  * script.js
  * Data: 2026-11-03
  * Autor: Gabriel / Antigravity
- * Resumo: Controle de animações cinematográficas (GSAP), rolagem suave (Lenis) e carrossel de depoimentos da Dra. Alessandra Feitosa.
+ * Resumo: Controle de animações cinematográficas (GSAP), rolagem suave (Lenis), smart header hide-on-scroll e carrossel de depoimentos para Dra. Alessandra Feitosa.
  */
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -53,7 +53,47 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 2. Animações de FadeIn suave nas seções
+  // 2. Smart Header (Oculta ao descer, reaparece ao subir)
+  const header = document.getElementById("main-header");
+  if (header) {
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const threshold = 8; // Buffer para estabilidade em toques rápidos
+
+    const handleScroll = (currentY) => {
+      // Sempre visível no topo
+      if (currentY <= 60) {
+        header.classList.remove("-translate-y-full");
+        lastScrollY = currentY;
+        return;
+      }
+
+      const diff = currentY - lastScrollY;
+      if (Math.abs(diff) < threshold) return;
+
+      if (diff > 0 && currentY > 120) {
+        // Rolando para baixo: recolhe
+        header.classList.add("-translate-y-full");
+      } else if (diff < 0) {
+        // Rolando para cima: revela
+        header.classList.remove("-translate-y-full");
+      }
+
+      lastScrollY = currentY;
+    };
+
+    if (lenis) {
+      lenis.on('scroll', (e) => {
+        handleScroll(e.scroll);
+      });
+    } else {
+      window.addEventListener("scroll", () => {
+        const currentY = window.pageYOffset || document.documentElement.scrollTop;
+        handleScroll(currentY);
+      }, { passive: true });
+    }
+  }
+
+  // 3. Animações de FadeIn suave nas seções
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     const sections = document.querySelectorAll("section");
     sections.forEach((section, index) => {
@@ -74,12 +114,12 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Cinematic Curtain Transition (Navegação via links âncora)
-  const navLinks = document.querySelectorAll('header nav a[href^="#"], a[href^="#procedimentos"]');
+  // 4. Cinematic Curtain Transition (Navegação via links âncora)
+  const navLinks = document.querySelectorAll('header nav a[href^="#"], a[href^="#procedimentos"], a[href^="#resultados"]');
   const curtain = document.getElementById("cinematic-curtain");
-  const logo = curtain ? curtain.querySelector(".logo") : null;
+  const logoCurtain = curtain ? curtain.querySelector(".logo-curtain, .logo") : null;
 
-  if (curtain && logo && typeof gsap !== 'undefined') {
+  if (curtain && logoCurtain && typeof gsap !== 'undefined') {
     navLinks.forEach(link => {
       link.addEventListener("click", (e) => {
         const targetId = link.getAttribute("href");
@@ -88,6 +128,9 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!targetSection) return;
 
         e.preventDefault();
+
+        // Garante que o header esteja visível na navegação
+        if (header) header.classList.remove("-translate-y-full");
 
         const tl = gsap.timeline();
         
@@ -98,7 +141,7 @@ window.addEventListener("DOMContentLoaded", () => {
           ease: "power3.inOut"
         })
         // Revelação da marca
-        .to(logo, {
+        .to(logoCurtain, {
           opacity: 1,
           scale: 1,
           duration: 0.35,
@@ -116,7 +159,7 @@ window.addEventListener("DOMContentLoaded", () => {
           });
         })
         // Ocultação da logo
-        .to(logo, {
+        .to(logoCurtain, {
           opacity: 0,
           scale: 0.85,
           duration: 0.25,
@@ -132,7 +175,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 4. Carrossel de Depoimentos Reais (WhatsApp Feedbacks)
+  // 5. Carrossel de Depoimentos Reais (WhatsApp Feedbacks)
   const track = document.getElementById("testimonials-track");
   const prevBtn = document.getElementById("carousel-prev");
   const nextBtn = document.getElementById("carousel-next");
@@ -140,7 +183,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (track && prevBtn && nextBtn) {
     const cards = track.querySelectorAll(".carousel-card");
-    const totalCards = cards.length;
 
     // Criação dos dots indicadores
     if (dotsContainer) {

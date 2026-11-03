@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%" height="100%">
+  <!-- Estilos e Tipografia -->
+  <style>
+    .brand-primary {
+      stroke: #c07a66;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .brand-fill {
+      fill: #c07a66;
+    }
+    .brand-title {
+      font-family: 'Cinzel', 'Playfair Display', 'Didot', 'Trajan Pro', 'Cinzel Decorative', 'Montserrat', serif;
+      font-size: 38px;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+    }
+    .brand-subtitle {
+      font-family: 'Montserrat', 'Century Gothic', 'Lato', sans-serif;
+      font-size: 14.5px;
+      letter-spacing: 0.42em;
+      font-weight: 400;
+    }
+  </style>
+
+  <!-- SÍMBOLO: Flor / Corações & Linha Fluida -->
+  <g class="brand-primary">
+    <!-- Linha de entrada que vem da esquerda em curva suave -->
+    <path d="M 68 280 C 120 205, 230 195, 380 200" stroke-width="5.5" />
+
+    <!-- Pétala esquerda -->
+    <path d="M 380 200 C 330 190, 275 140, 290 98 C 302 65, 345 70, 375 110" stroke-width="5.5" />
+
+    <!-- Coração central / Pétalas centrais -->
+    <path d="M 375 110 C 340 50, 385 10, 422 68 C 455 10, 500 50, 468 112" stroke-width="5.5" />
+
+    <!-- Pétala direita -->
+    <path d="M 468 112 C 500 75, 545 70, 555 105 C 565 145, 510 195, 450 200" stroke-width="5.5" />
+
+    <!-- Base conectora e traço ondulado até o monograma -->
+    <path d="M 380 200 C 405 212, 425 212, 450 200" stroke-width="5.5" />
+    <path d="M 425 208 C 450 240, 515 250, 620 236 C 685 228, 730 220, 800 216" stroke-width="5.5" />
+
+    <!-- MONOGRAMA "AF" EM CALIGRAFIA CURSIVA -->
+    <!-- Letra 'A' maiúscula artística -->
+    <!-- Haste e laço esquerdo -->
+    <path d="M 770 380 C 720 320, 690 200, 715 130 C 730 90, 755 85, 775 125 C 795 165, 805 270, 790 385" stroke-width="6.5" />
+    <!-- Traço horizontal elegante cortando o A -->
+    <path d="M 695 240 Q 770 230, 840 226" stroke-width="5" />
+
+    <!-- Letra 'f' / Laço direito -->
+    <!-- Haste vertical e laço do F -->
+    <path d="M 875 35 C 840 45, 800 110, 810 230 C 818 310, 810 395, 795 425" stroke-width="6.5" />
+    <!-- Alça superior e volta central do F -->
+    <path d="M 855 38 C 885 50, 930 110, 895 195 C 875 240, 825 242, 800 238 C 845 235, 915 225, 955 218" stroke-width="5.5" />
+  </g>
+
+  <!-- TEXTOS TIPOGRÁFICOS -->
+  <!-- Nome principal -->
+  <text x="365" y="325" text-anchor="middle" class="brand-fill brand-title">ALESSANDRA FEITOSA</text>
+
+  <!-- Subtítulo -->
+  <text x="368" y="358" text-anchor="middle" class="brand-fill brand-subtitle">ESTÉTICA AVANÇADA</text>
+</svg>
