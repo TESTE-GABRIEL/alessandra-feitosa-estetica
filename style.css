@@ -2,7 +2,7 @@
  * style.css
  * Data: 2026-11-03
  * Autor: Gabriel / Antigravity
- * Resumo: Estilos base e componentes visuais personalizados para Dra. Alessandra Feitosa.
+ * Resumo: Estilos base, componentes visuais e carrossel de depoimentos para Dra. Alessandra Feitosa.
  */
 
 :root {
@@ -35,6 +35,41 @@ body {
 
 .stats-card:last-child {
   border-right: 0;
+}
+
+/* Ocultação de Barra de Rolagem mantendo scroll funcional */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scroll Snap para Carrossel */
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-card {
+  scroll-snap-align: start;
+  flex: 0 0 100%;
+}
+
+@media (min-width: 640px) {
+  .carousel-card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-card {
+    flex: 0 0 calc(33.333% - 1.35rem);
+  }
 }
 
 /* Cinematic Curtain Base Style */

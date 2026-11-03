@@ -2,7 +2,7 @@
  * script.js
  * Data: 2026-11-03
  * Autor: Gabriel / Antigravity
- * Resumo: Controle de animações cinematográficas (GSAP), rolagem suave (Lenis) e transições para o site da Dra. Alessandra Feitosa.
+ * Resumo: Controle de animações cinematográficas (GSAP), rolagem suave (Lenis) e carrossel de depoimentos da Dra. Alessandra Feitosa.
  */
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -128,6 +128,77 @@ window.addEventListener("DOMContentLoaded", () => {
           duration: 0.6,
           ease: "power3.inOut"
         });
+      });
+    });
+  }
+
+  // 4. Carrossel de Depoimentos Reais (WhatsApp Feedbacks)
+  const track = document.getElementById("testimonials-track");
+  const prevBtn = document.getElementById("carousel-prev");
+  const nextBtn = document.getElementById("carousel-next");
+  const dotsContainer = document.getElementById("carousel-dots");
+
+  if (track && prevBtn && nextBtn) {
+    const cards = track.querySelectorAll(".carousel-card");
+    const totalCards = cards.length;
+
+    // Criação dos dots indicadores
+    if (dotsContainer) {
+      dotsContainer.innerHTML = "";
+      cards.forEach((_, idx) => {
+        const dot = document.createElement("button");
+        dot.className = `size-2.5 rounded-full transition-all duration-300 ${idx === 0 ? "bg-primary w-7" : "bg-white/30 hover:bg-white/60"}`;
+        dot.setAttribute("aria-label", `Ir para depoimento ${idx + 1}`);
+        dot.addEventListener("click", () => {
+          scrollToIndex(idx);
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function getCardWidth() {
+      if (cards.length === 0) return 300;
+      const firstCard = cards[0];
+      const gap = 24; // gap-6 do Tailwind
+      return firstCard.offsetWidth + gap;
+    }
+
+    function scrollToIndex(index) {
+      const step = getCardWidth();
+      track.scrollTo({
+        left: index * step,
+        behavior: "smooth"
+      });
+    }
+
+    prevBtn.addEventListener("click", () => {
+      const step = getCardWidth();
+      track.scrollBy({
+        left: -step,
+        behavior: "smooth"
+      });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      const step = getCardWidth();
+      track.scrollBy({
+        left: step,
+        behavior: "smooth"
+      });
+    });
+
+    // Atualização dos dots no scroll
+    track.addEventListener("scroll", () => {
+      if (!dotsContainer) return;
+      const step = getCardWidth();
+      const activeIndex = Math.round(track.scrollLeft / step);
+      const dots = dotsContainer.querySelectorAll("button");
+      dots.forEach((dot, idx) => {
+        if (idx === activeIndex) {
+          dot.className = "size-2.5 rounded-full transition-all duration-300 bg-primary w-7";
+        } else {
+          dot.className = "size-2.5 rounded-full transition-all duration-300 bg-white/30 hover:bg-white/60";
+        }
       });
     });
   }

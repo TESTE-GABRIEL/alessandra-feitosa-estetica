@@ -2,7 +2,7 @@
   index.html
   Data: 2026-11-03
   Autor: Gabriel / Antigravity
-  Resumo: Landing page profissional personalizada para a Dra. Alessandra Feitosa (Biomédica Esteta).
+  Resumo: Landing page profissional personalizada para a Dra. Alessandra Feitosa (Biomédica Esteta) com carrossel de depoimentos reais do WhatsApp e horários de funcionamento oficiais.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -301,7 +301,7 @@
         </div>
     </section>
 
-    <!-- Seção Depoimentos / Prova Social -->
+    <!-- Seção Depoimentos / Prova Social com Carrossel de Feedbacks Reais -->
     <section class="py-28 bg-background-dark text-white relative overflow-hidden" id="depoimentos">
         <div class="absolute inset-0 opacity-15">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary rounded-full blur-[140px] -mr-64 -mt-64"></div>
@@ -309,51 +309,224 @@
         </div>
         
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+            <!-- Cabeçalho da Seção com Controles do Carrossel -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                 <div class="space-y-3">
-                    <span class="text-accent font-bold tracking-widest-plus text-[11px] uppercase">Confiança &amp; Resultados</span>
-                    <h2 class="font-serif text-4xl sm:text-5xl">O que dizem nossas pacientes</h2>
-                </div>
-                <div class="flex items-center gap-3 bg-white/10 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/15">
-                    <div class="flex gap-1 text-amber-300">
-                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
-                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
-                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
-                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
-                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                    <div class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1 rounded-full border border-white/10">
+                        <span class="size-2 rounded-full bg-emerald-400"></span>
+                        <span class="text-accent font-bold tracking-widest-plus text-[10px] uppercase">Feedbacks Reais de Pacientes</span>
                     </div>
-                    <span class="text-xs tracking-widest uppercase font-bold text-white/90">Avaliação 5.0 • Excelência</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl">O que dizem sobre nosso cuidado</h2>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <!-- Rating 5.0 -->
+                    <div class="hidden sm:flex items-center gap-2.5 bg-white/10 px-4 py-2 rounded-full backdrop-blur-md border border-white/15">
+                        <div class="flex gap-0.5 text-amber-300">
+                            <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                            <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                            <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                            <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                            <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                        </div>
+                        <span class="text-xs tracking-wider uppercase font-bold text-white/90">5.0 Estrelas</span>
+                    </div>
+
+                    <!-- Botões de Navegação do Carrossel -->
+                    <div class="flex items-center gap-2">
+                        <button id="carousel-prev" aria-label="Depoimento anterior" class="size-11 rounded-full bg-white/10 hover:bg-primary border border-white/15 flex items-center justify-center transition-all hover:scale-105 active:scale-95 text-white">
+                            <span class="material-symbols-outlined text-lg">chevron_left</span>
+                        </button>
+                        <button id="carousel-next" aria-label="Próximo depoimento" class="size-11 rounded-full bg-white/10 hover:bg-primary border border-white/15 flex items-center justify-center transition-all hover:scale-105 active:scale-95 text-white">
+                            <span class="material-symbols-outlined text-lg">chevron_right</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Depoimento 1: PEIM -->
-                <div class="p-8 sm:p-10 bg-white/5 border border-white/10 rounded-md backdrop-blur-sm group hover:bg-white/10 transition-all">
-                    <span class="material-symbols-outlined text-primary-light mb-6 opacity-60 text-3xl">format_quote</span>
-                    <p class="text-base sm:text-lg leading-relaxed mb-6 font-light text-white/90">
-                        "Fiz o tratamento de PEIM para os vasinhos das minhas pernas e o resultado foi maravilhoso! Profissional muito atenciosa e detalhista aqui em Presidente Dutra."
-                    </p>
-                    <span class="block text-xs font-bold tracking-widest uppercase text-accent">— Camila R. • Paciente PEIM</span>
+            <!-- Trilho do Carrossel (Scroll-Snap Touch-Friendly) -->
+            <div id="testimonials-track" class="carousel-track hide-scrollbar gap-6 pb-6">
+                
+                <!-- Card 1: Espinhas & Pele Lisinha -->
+                <div class="carousel-card p-7 sm:p-8 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm flex flex-col justify-between hover:bg-white/10 transition-all border-t-2 border-t-primary/70">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-xs">verified</span>
+                                WhatsApp
+                            </span>
+                            <div class="flex gap-0.5 text-amber-300 text-xs">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-base leading-relaxed mb-6 font-light text-white/95 italic">
+                            "Oiee 🥰 tá perfeito, amei demais! Lisinho, e as espinhas que estavam inflamadas melhoraram... Passei apenas protetor solar hoje."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-white/80 font-medium">Paciente • Tratamento Facial</span>
+                        <span class="text-accent text-[11px]">Pres. Dutra - MA</span>
+                    </div>
                 </div>
 
-                <!-- Depoimento 2: Botox -->
-                <div class="p-8 sm:p-10 bg-white/5 border border-white/10 rounded-md backdrop-blur-sm group hover:bg-white/10 transition-all">
-                    <span class="material-symbols-outlined text-primary-light mb-6 opacity-60 text-3xl">format_quote</span>
-                    <p class="text-base sm:text-lg leading-relaxed mb-6 font-light text-white/90">
-                        "O botox da Dra. Alessandra ficou perfeito e super natural! Meu rosto ficou leve, descansado e sem rugas marcadas. Recomendo de olhos fechados!"
-                    </p>
-                    <span class="block text-xs font-bold tracking-widest uppercase text-accent">— Juliana S. • Toxina Botulínica</span>
+                <!-- Card 2: Cicatrizes & Autoestima -->
+                <div class="carousel-card p-7 sm:p-8 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm flex flex-col justify-between hover:bg-white/10 transition-all border-t-2 border-t-primary/70">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-xs">verified</span>
+                                WhatsApp
+                            </span>
+                            <div class="flex gap-0.5 text-amber-300 text-xs">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-base leading-relaxed mb-6 font-light text-white/95 italic">
+                            "Nunca imaginei que um dia ia conseguir acabar com essas cicatrizes. O lado menos danificado já está notável a melhoria. Já consegui ficar sem base sem me importar muito, algo que sempre me incomodava!"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-white/80 font-medium">Paciente • Cicatrizes & Pele</span>
+                        <span class="text-accent text-[11px]">Pres. Dutra - MA</span>
+                    </div>
                 </div>
 
-                <!-- Depoimento 3: Pós-Operatório -->
-                <div class="p-8 sm:p-10 bg-white/5 border border-white/10 rounded-md backdrop-blur-sm group hover:bg-white/10 transition-all">
-                    <span class="material-symbols-outlined text-primary-light mb-6 opacity-60 text-3xl">format_quote</span>
-                    <p class="text-base sm:text-lg leading-relaxed mb-6 font-light text-white/90">
-                        "Fiz todo o meu pós-operatório com a Dra. Alessandra. O cuidado com a drenagem e as orientações foram fundamentais para minha recuperação sem dores e sem fibrose."
-                    </p>
-                    <span class="block text-xs font-bold tracking-widest uppercase text-accent">— Renata M. • Pós-Operatório</span>
+                <!-- Card 3: Pele de Bebê -->
+                <div class="carousel-card p-7 sm:p-8 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm flex flex-col justify-between hover:bg-white/10 transition-all border-t-2 border-t-primary/70">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-xs">verified</span>
+                                WhatsApp
+                            </span>
+                            <div class="flex gap-0.5 text-amber-300 text-xs">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-base leading-relaxed mb-6 font-light text-white/95 italic">
+                            "Boooom diiiaaaa 🥰 Tô simplesmente apaixonada pela minha pele, tão macia, não sinto nenhum cravo... Parecendo pele de bebê! Vc ganhou uma cliente 💕"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-white/80 font-medium">Paciente • Limpeza Profunda</span>
+                        <span class="text-accent text-[11px]">Pres. Dutra - MA</span>
+                    </div>
                 </div>
+
+                <!-- Card 4: Clareamento & Pele Clara -->
+                <div class="carousel-card p-7 sm:p-8 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm flex flex-col justify-between hover:bg-white/10 transition-all border-t-2 border-t-primary/70">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-xs">verified</span>
+                                WhatsApp
+                            </span>
+                            <div class="flex gap-0.5 text-amber-300 text-xs">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-base leading-relaxed mb-6 font-light text-white/95 italic">
+                            "Amanheceu ótimo, amei! Próximo mês vou fazer novamente, ficou uma pele mais clara e macia, muito obrigada Alessandra! O protetor é maravilhoso também."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-white/80 font-medium">Paciente • Renovação Facial</span>
+                        <span class="text-accent text-[11px]">Pres. Dutra - MA</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Mão de Fada -->
+                <div class="carousel-card p-7 sm:p-8 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm flex flex-col justify-between hover:bg-white/10 transition-all border-t-2 border-t-primary/70">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-xs">verified</span>
+                                WhatsApp
+                            </span>
+                            <div class="flex gap-0.5 text-amber-300 text-xs">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-base leading-relaxed mb-6 font-light text-white/95 italic">
+                            "Que limpeza maravilhosa, uma sensação leve 🪶 Saiu tudinho, o rosto tá um pouco vermelho, mas jajá volta ao normal. Você arrasa e tem mão de fada 💖"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-white/80 font-medium">Paciente • Limpeza Especializada</span>
+                        <span class="text-accent text-[11px]">Pres. Dutra - MA</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: Limpinha & Clara -->
+                <div class="carousel-card p-7 sm:p-8 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm flex flex-col justify-between hover:bg-white/10 transition-all border-t-2 border-t-primary/70">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-xs">verified</span>
+                                WhatsApp
+                            </span>
+                            <div class="flex gap-0.5 text-amber-300 text-xs">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-base leading-relaxed mb-6 font-light text-white/95 italic">
+                            "Gostou sim, a pele dela ficou bem limpinha e um pouco mais clara ❤️ Excelente resultado e muito carinho no atendimento."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-white/80 font-medium">Paciente • Limpeza de Pele</span>
+                        <span class="text-accent text-[11px]">Pres. Dutra - MA</span>
+                    </div>
+                </div>
+
+                <!-- Card 7: Apaixonada pela Limpeza -->
+                <div class="carousel-card p-7 sm:p-8 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm flex flex-col justify-between hover:bg-white/10 transition-all border-t-2 border-t-primary/70">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-xs">verified</span>
+                                WhatsApp
+                            </span>
+                            <div class="flex gap-0.5 text-amber-300 text-xs">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-base leading-relaxed mb-6 font-light text-white/95 italic">
+                            "Bom dia amor 🌸💖 Passando só pra dizer que eu ameiiiii a limpeza de pele! Ficou incrível! 😘😘😍😍"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-white/80 font-medium">Paciente • Protocolo Facial</span>
+                        <span class="text-accent text-[11px]">Pres. Dutra - MA</span>
+                    </div>
+                </div>
+
+                <!-- Card 8: Cuidando Mais de Mim -->
+                <div class="carousel-card p-7 sm:p-8 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm flex flex-col justify-between hover:bg-white/10 transition-all border-t-2 border-t-primary/70">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-xs">verified</span>
+                                WhatsApp
+                            </span>
+                            <div class="flex gap-0.5 text-amber-300 text-xs">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-base leading-relaxed mb-6 font-light text-white/95 italic">
+                            "Minha melhor hora da quarta-feira é com você 😍💕 Tô me sentindo tão bem cuidando mais de mim ❤️"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-white/80 font-medium">Paciente • Experiência Clínica</span>
+                        <span class="text-accent text-[11px]">Pres. Dutra - MA</span>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Dots Indicadores -->
+            <div id="carousel-dots" class="flex justify-center items-center gap-2 mt-4"></div>
         </div>
     </section>
 
@@ -393,16 +566,27 @@
                             </div>
                         </div>
 
+                        <!-- Horários de Funcionamento Oficiais -->
                         <div class="flex gap-5 items-start">
                             <div class="size-12 rounded-full bg-cream flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-primary text-xl">schedule</span>
                             </div>
-                            <div>
-                                <p class="font-serif text-lg text-primary font-bold mb-1">Horário de Atendimento</p>
-                                <p class="text-slate-600 font-light text-sm">
-                                    Segunda a Sexta: 08:00 às 18:00<br/>
-                                    Sábados: Atendimento mediante agendamento prévio
-                                </p>
+                            <div class="w-full max-w-sm">
+                                <p class="font-serif text-lg text-primary font-bold mb-2">Horário de Funcionamento</p>
+                                <div class="bg-background-light p-4 rounded-md border border-primary/10 text-xs sm:text-sm space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-slate-700 font-medium">Segunda a Sexta</span>
+                                        <span class="font-bold text-primary">08:00 às 19:00</span>
+                                    </div>
+                                    <div class="flex items-center justify-between border-t border-slate-200/60 pt-2">
+                                        <span class="text-slate-700 font-medium">Sábado</span>
+                                        <span class="font-bold text-primary">08:00 às 14:00</span>
+                                    </div>
+                                    <div class="flex items-center justify-between border-t border-slate-200/60 pt-2">
+                                        <span class="text-slate-500 font-medium">Domingo</span>
+                                        <span class="text-rose-600 font-semibold bg-rose-50 px-2 py-0.5 rounded text-[11px] uppercase tracking-wider">Fechado</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
