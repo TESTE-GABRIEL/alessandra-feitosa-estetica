@@ -2,7 +2,7 @@
  * script.js
  * Data: 2026-11-03
  * Autor: Gabriel / Antigravity
- * Resumo: Controle de animações cinematográficas (GSAP), rolagem suave (Lenis), smart header suave e sutil (sem travamentos) e carrossel de depoimentos para Dra. Alessandra Feitosa.
+ * Resumo: Controle de animações cinematográficas (GSAP), rolagem suave (Lenis), smart header garantido com CSS nativo e carrossel de depoimentos para Dra. Alessandra Feitosa.
  */
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -53,39 +53,32 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 2. Smart Header (Oculta ao descer, reaparece ao subir de forma sutil, devagar e contínua)
+  // 2. Smart Header (Oculta ao descer, reaparece ao subir com classe CSS nativa .header-hidden)
   const header = document.getElementById("main-header");
   if (header) {
     let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-    let accumulatedDelta = 0;
-    const hideThreshold = 30; // 30px de rolagem intencional contínua para baixo
-    const showThreshold = 18; // 18px de rolagem intencional contínua para cima
+    const tolerance = 6; // Tolerância mínima para eliminar trepidação
 
-    const handleScroll = (currentY) => {
-      // Sempre totalmente visível perto do topo
-      if (currentY <= 80) {
-        header.classList.remove("-translate-y-full");
+    const updateHeader = (currentY) => {
+      // Perto do topo da página: sempre visível
+      if (currentY <= 40) {
+        header.classList.remove("header-hidden");
         lastScrollY = currentY;
-        accumulatedDelta = 0;
         return;
       }
 
-      const delta = currentY - lastScrollY;
+      const diff = currentY - lastScrollY;
 
-      // Se a direção mudou, reseta o acumulador para evitar hesitação/travamento
-      if ((delta > 0 && accumulatedDelta < 0) || (delta < 0 && accumulatedDelta > 0)) {
-        accumulatedDelta = 0;
+      if (Math.abs(diff) < tolerance) {
+        return;
       }
 
-      accumulatedDelta += delta;
-
-      // Rolagem deliberada para baixo: recolhe sutilmente
-      if (accumulatedDelta > hideThreshold) {
-        header.classList.add("-translate-y-full");
-      }
-      // Rolagem deliberada para cima: reaparece calmamente
-      else if (accumulatedDelta < -showThreshold) {
-        header.classList.remove("-translate-y-full");
+      if (diff > 0 && currentY > 60) {
+        // Rolando para baixo: recolhe
+        header.classList.add("header-hidden");
+      } else if (diff < 0) {
+        // Rolando para cima: reaparece
+        header.classList.remove("header-hidden");
       }
 
       lastScrollY = currentY;
@@ -93,12 +86,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (lenis) {
       lenis.on('scroll', (e) => {
-        handleScroll(e.scroll);
+        updateHeader(e.scroll);
       });
     } else {
       window.addEventListener("scroll", () => {
         const currentY = window.pageYOffset || document.documentElement.scrollTop;
-        handleScroll(currentY);
+        updateHeader(currentY);
       }, { passive: true });
     }
   }
@@ -140,7 +133,7 @@ window.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         // Garante que o header esteja visível na navegação
-        if (header) header.classList.remove("-translate-y-full");
+        if (header) header.classList.remove("header-hidden");
 
         const tl = gsap.timeline();
         
