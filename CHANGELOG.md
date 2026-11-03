@@ -17,3 +17,4 @@ O formato baseia-se em: `Data | Tipo | Descrição | Autor`
 | 2026-11-03 | `[CUSTOM]` | Implementação do carrossel responsivo com os 8 depoimentos reais do WhatsApp e inserção dos horários oficiais (Seg-Sex 08h-19h, Sáb 08h-14h). | Gabriel |
 | 2026-11-03 | `[CUSTOM]` | Inclusão de logo oficial em vetor SVG (`logo.svg`), nova foto oficial de estúdio (`dra_alessandra_estudio.jpg`), seção de Antes e Depois clínicos (PEIM, Botox e Limpeza de Pele), Smart Header hide-on-scroll e limpeza de badges e Linktree. | Gabriel |
 | 2026-11-03 | `[DEPLOY]` | Deploy de produção realizado com sucesso na Vercel (https://alessandra-feitosa-estetica.vercel.app) e sincronizado com GitHub (TESTE-GABRIEL/alessandra-feitosa-estetica). | Gabriel |
+| 2026-11-03 | `[FIX]` | Suavização da barra superior inteligente com transição aveludada (0.55s ease) e eliminação de travamento/hesitação via acumulador de delta contínuo. | Gabriel |

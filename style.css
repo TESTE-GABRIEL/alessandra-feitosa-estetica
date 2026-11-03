@@ -2,7 +2,7 @@
  * style.css
  * Data: 2026-11-03
  * Autor: Gabriel / Antigravity
- * Resumo: Estilos base, componentes visuais, smart header e carrossel de depoimentos para Dra. Alessandra Feitosa.
+ * Resumo: Estilos base, componentes visuais, smart header com transição sutil e carrossel de depoimentos para Dra. Alessandra Feitosa.
  */
 
 :root {
@@ -24,9 +24,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smart Header Hide/Show */
+/* Smart Header Hide/Show - Transição sutil, devagar e aveludada */
 #main-header {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
   will-change: transform;
 }
 

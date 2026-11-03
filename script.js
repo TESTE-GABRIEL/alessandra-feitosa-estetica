@@ -2,7 +2,7 @@
  * script.js
  * Data: 2026-11-03
  * Autor: Gabriel / Antigravity
- * Resumo: Controle de animações cinematográficas (GSAP), rolagem suave (Lenis), smart header hide-on-scroll e carrossel de depoimentos para Dra. Alessandra Feitosa.
+ * Resumo: Controle de animações cinematográficas (GSAP), rolagem suave (Lenis), smart header suave e sutil (sem travamentos) e carrossel de depoimentos para Dra. Alessandra Feitosa.
  */
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -53,28 +53,38 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 2. Smart Header (Oculta ao descer, reaparece ao subir)
+  // 2. Smart Header (Oculta ao descer, reaparece ao subir de forma sutil, devagar e contínua)
   const header = document.getElementById("main-header");
   if (header) {
     let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-    const threshold = 8; // Buffer para estabilidade em toques rápidos
+    let accumulatedDelta = 0;
+    const hideThreshold = 30; // 30px de rolagem intencional contínua para baixo
+    const showThreshold = 18; // 18px de rolagem intencional contínua para cima
 
     const handleScroll = (currentY) => {
-      // Sempre visível no topo
-      if (currentY <= 60) {
+      // Sempre totalmente visível perto do topo
+      if (currentY <= 80) {
         header.classList.remove("-translate-y-full");
         lastScrollY = currentY;
+        accumulatedDelta = 0;
         return;
       }
 
-      const diff = currentY - lastScrollY;
-      if (Math.abs(diff) < threshold) return;
+      const delta = currentY - lastScrollY;
 
-      if (diff > 0 && currentY > 120) {
-        // Rolando para baixo: recolhe
+      // Se a direção mudou, reseta o acumulador para evitar hesitação/travamento
+      if ((delta > 0 && accumulatedDelta < 0) || (delta < 0 && accumulatedDelta > 0)) {
+        accumulatedDelta = 0;
+      }
+
+      accumulatedDelta += delta;
+
+      // Rolagem deliberada para baixo: recolhe sutilmente
+      if (accumulatedDelta > hideThreshold) {
         header.classList.add("-translate-y-full");
-      } else if (diff < 0) {
-        // Rolando para cima: revela
+      }
+      // Rolagem deliberada para cima: reaparece calmamente
+      else if (accumulatedDelta < -showThreshold) {
         header.classList.remove("-translate-y-full");
       }
 
