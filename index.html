@@ -1,24 +1,44 @@
+<!--
+  index.html
+  Data: 2026-11-03
+  Autor: Gabriel / Antigravity
+  Resumo: Landing page profissional personalizada para a Dra. Alessandra Feitosa (Biomédica Esteta).
+-->
 <!DOCTYPE html>
-<html lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="google" content="notranslate" />
-<title>Dra. Samira Lourenço - Harmonização Orofacial</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
-<script id="tailwind-config">
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="google" content="notranslate" />
+    <title>Dra. Alessandra Feitosa - Biomédica Esteta | Pres. Dutra - MA</title>
+    
+    <!-- Tailwind CSS com Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Estilo Base e Componentização -->
+    <link rel="stylesheet" href="style.css"/>
+    
+    <!-- Centralização de Tema Global -->
+    <script src="theme.js"></script>
+    
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#6a1b29", // Burgundy
-                        "accent": "#c5a47e",  // Gold/Champagne
-                        "cream": "#fdfbf7",   // Premium Cream
-                        "background-light": "#fcfaf8",
-                        "background-dark": "#1a0d0f",
+                        "primary": "#c07a66",
+                        "primary-dark": "#9d5846",
+                        "primary-light": "#e5b7ab",
+                        "accent": "#cfd0e5",
+                        "accent-dark": "#6b6f8a",
+                        "cream": "#f7e9e0",
+                        "background-light": "#f8f4f3",
+                        "background-dark": "#261917",
                     },
                     fontFamily: {
                         "display": ["Inter", "sans-serif"],
@@ -32,252 +52,425 @@
         }
     </script>
 </head>
-<body class="font-display">
-<header class="fixed top-0 w-full z-50 bg-cream/90 backdrop-blur-lg editorial-border">
-<div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-<div class="flex flex-col">
-<span class="font-serif text-2xl font-bold tracking-tight text-primary uppercase leading-none" translate="no">Samira Lourenço</span>
-<span class="text-[10px] tracking-widest-plus uppercase text-primary/60 font-medium">Harmonização Orofacial</span>
-</div>
-<nav class="hidden lg:flex items-center gap-10 text-xs font-semibold uppercase tracking-widest text-slate-600">
-<a class="hover:text-primary transition-colors" href="#sobre">Dra. Samira</a>
-<a class="hover:text-primary transition-colors" href="#procedimentos">Procedimentos</a>
-<a class="hover:text-primary transition-colors" href="#depoimentos">Depoimentos</a>
-<a class="hover:text-primary transition-colors" href="#contato">Localização</a>
-</nav>
-<a class="bg-primary text-white px-8 py-3.5 rounded-sm font-bold text-xs hover:bg-primary/90 transition-all uppercase tracking-widest shadow-lg shadow-primary/20" href="https://wa.me/5599991160563">
-            Agendar Consulta
+<body class="font-display bg-background-light text-slate-800 antialiased selection:bg-primary selection:text-white">
+
+<!-- Header Fixo Editorial -->
+<header class="fixed top-0 w-full z-50 bg-cream/90 backdrop-blur-lg editorial-border shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+        <a href="#" class="flex flex-col group">
+            <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-primary uppercase leading-none group-hover:opacity-90 transition-opacity" translate="no">Dra. Alessandra Feitosa</span>
+            <span class="text-[10px] tracking-widest-plus uppercase text-slate-500 font-medium mt-1">Biomédica Esteta • Estética Avançada</span>
         </a>
-</div>
+        
+        <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-slate-600">
+            <a class="hover:text-primary transition-colors py-2" href="#sobre">Dra. Alessandra</a>
+            <a class="hover:text-primary transition-colors py-2" href="#procedimentos">Procedimentos</a>
+            <a class="hover:text-primary transition-colors py-2" href="#depoimentos">Depoimentos</a>
+            <a class="hover:text-primary transition-colors py-2" href="#contato">Localização</a>
+        </nav>
+        
+        <div class="flex items-center gap-4">
+            <a class="hidden sm:inline-flex bg-primary text-white px-7 py-3 rounded-sm font-bold text-xs hover:bg-primary-dark transition-all uppercase tracking-widest shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5" href="https://wa.me/5599981192817?text=Ol%C3%A1%2C%20Dra.%20Alessandra!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank">
+                Agendar Consulta
+            </a>
+        </div>
+    </div>
 </header>
+
 <main class="pt-24">
-<section class="relative min-h-[90vh] flex items-center overflow-hidden">
-<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 xl:gap-24 items-center py-12 lg:py-0">
-<div class="relative order-2 lg:order-1">
-<div class="relative z-10 aspect-[4/5] overflow-hidden shadow-2xl">
-<img alt="Dra. Samira Lourenço" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXesf5Sf-KI5oL-WiK4RWIQwuYDmjexlYf1ss9DXRRo_WWg6XobKmSkrCSMHW1TOtkbLKSFASFNHs4__Hj1lH3iRbbioJWQzUVu4hdOOp4eHpqbnQjFMyk5_ofGPHqT6ETBRMdDxnWFMIHuEaAyVs523VhkeGEEKr5Yc-K0rnehpIbUj-RYKV6KO0LCqGGNSMKdc8SnkHqPQHj8ZhlYD-FcycJ_0jCazVOorTIkTu1MpxXHvNjM7Gy1XP1p93mn5aDDU8hTZk_SQ"/>
-</div>
-<div class="absolute -bottom-6 -left-6 w-48 h-48 border-[12px] border-accent/20 -z-0"></div>
-</div>
-<div class="order-1 lg:order-2 space-y-10">
-<div class="space-y-4">
-<span class="inline-block text-accent font-bold tracking-[0.4em] uppercase text-[11px]">Especialista Facial</span>
-<h1 class="font-serif text-5xl lg:text-6xl xl:text-7xl leading-[1.1] text-primary">
-                        A arte de realçar sua <span class="italic">melhor versão</span> com a precisão de quem entende de face.
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-b from-cream/40 via-background-light to-background-light">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 xl:gap-20 items-center py-16 lg:py-12">
+            <!-- Imagem Oficial -->
+            <div class="relative order-2 lg:order-1 flex justify-center">
+                <div class="relative z-10 w-full max-w-md aspect-[4/5] overflow-hidden rounded-md shadow-2xl border-4 border-white bg-cream">
+                    <img 
+                        alt="Dra. Alessandra Feitosa - Biomédica Esteta" 
+                        class="w-full h-full object-cover object-top hover:scale-105 transition-all duration-700" 
+                        src="dra_alessandra_perfil_hd.png"
+                    />
+                    <!-- Overlay sutil de elegância -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-background-dark/40 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="inline-block bg-primary/90 backdrop-blur-md px-3 py-1 rounded text-[10px] uppercase font-bold tracking-widest mb-1">Especialista</span>
+                        <p class="font-serif text-lg font-bold">Dra. Alessandra Feitosa</p>
+                        <p class="text-xs text-white/80">Presidente Dutra - MA</p>
+                    </div>
+                </div>
+                <!-- Borda decorativa de luxo -->
+                <div class="absolute -bottom-6 -left-6 w-48 h-48 border-[12px] border-primary/20 rounded-md -z-0 hidden sm:block"></div>
+                <div class="absolute -top-6 -right-6 w-32 h-32 bg-accent/30 rounded-full blur-2xl -z-0"></div>
+            </div>
+
+            <!-- Conteúdo Hero -->
+            <div class="order-1 lg:order-2 space-y-8">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 bg-cream px-4 py-1.5 rounded-full border border-primary/20">
+                        <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                        <span class="text-primary font-bold tracking-[0.25em] uppercase text-[11px]">Biomédica Esteta ✨</span>
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] text-primary">
+                        A ciência de revelar sua <span class="italic font-normal">melhor versão</span> com harmonia e naturalidade.
                     </h1>
-</div>
-<p class="text-lg text-slate-600 max-w-lg leading-relaxed font-light">
-                    Harmonização Orofacial com resultados naturais, guiada por mais de 10 anos de experiência clínica em Dom Pedro - MA.
+                </div>
+                
+                <p class="text-lg text-slate-600 max-w-lg leading-relaxed font-light">
+                    Referência em <strong>PEIM (Microvasos)</strong>, <strong>Botox</strong>, e procedimentos estéticos faciais e corporais de alta precisão em <strong>Presidente Dutra - MA</strong>.
                 </p>
-<div class="pt-6">
-<a class="inline-flex items-center group gap-4 bg-primary text-white px-10 py-5 rounded-sm font-bold text-sm hover:translate-x-1 transition-all shadow-xl shadow-primary/20 uppercase tracking-widest" href="https://wa.me/5599991160563">
+
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+                    <a class="inline-flex justify-center items-center group gap-4 bg-primary text-white px-9 py-5 rounded-sm font-bold text-xs hover:bg-primary-dark hover:translate-x-1 transition-all shadow-xl shadow-primary/20 uppercase tracking-widest" href="https://wa.me/5599981192817?text=Ol%C3%A1%2C%20Dra.%20Alessandra!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank">
                         Quero agendar minha avaliação
-                        <span class="material-symbols-outlined text-accent group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<section class="bg-white py-32 border-y border-primary/5" id="sobre">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid lg:grid-cols-12 gap-20">
-<div class="lg:col-span-6 space-y-8">
-<div class="space-y-2">
-<span class="text-accent font-bold tracking-widest text-xs uppercase block">Conheça quem cuida de você</span>
-<h2 class="font-serif text-5xl text-primary" translate="no">Dra. Samira Lourenço</h2>
-<p class="text-sm tracking-widest text-slate-400 uppercase font-medium">Dentista • Harmonizadora Facial | Dom Pedro, Maranhão</p>
-</div>
-<div class="prose prose-slate prose-lg font-light text-slate-600 leading-relaxed">
-<p>Com mais de 12 anos dedicados à odontologia, minha jornada evoluiu para a paixão pela estética facial. Acredito que a verdadeira beleza reside no equilíbrio e na sutileza.</p>
-<p>Minha abordagem foca em técnicas avançadas que respeitam a anatomia individual de cada paciente, proporcionando um rejuvenescimento que não transforma, mas sim revela o seu melhor.</p>
-</div>
-<div class="bg-cream border border-primary/5 p-8 italic font-serif text-2xl text-primary/80 relative">
-<span class="absolute top-4 left-4 text-6xl text-accent/20 font-serif leading-none">“</span>
-<p class="relative z-10 pl-4">Beleza que respeita quem você é.</p>
-</div>
-</div>
-<div class="lg:col-span-6 flex flex-col justify-center">
-<div class="grid grid-cols-1 md:grid-cols-3 bg-cream border border-primary/10 mb-12">
-<div class="stats-card text-center">
-<span class="block text-4xl font-serif text-primary mb-1">12</span>
-<span class="text-[9px] font-bold tracking-widest uppercase text-slate-400">Anos como Dentista</span>
-</div>
-<div class="stats-card text-center">
-<span class="block text-4xl font-serif text-primary mb-1">05</span>
-<span class="text-[9px] font-bold tracking-widest uppercase text-slate-400">Em Harmonização</span>
-</div>
-<div class="stats-card text-center">
-<span class="block text-4xl font-serif text-primary mb-1">∞</span>
-<span class="text-[9px] font-bold tracking-widest uppercase text-slate-400">Atualizações</span>
-</div>
-</div>
-<div class="aspect-video relative overflow-hidden shadow-2xl">
-<img alt="Clínica Oral Prime" class="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs61_qrRUoOthpPhpjkN3UIHdjcU3y1BuLow0Cr-6wjh_NWXRKz1d_N6t2SwFGHw6xpaO6S1S-Oyldg6OB-d6z_Vyj0QMx7DcYhoEmA2xpeb59_9PdxnT-a86q2vl9xLJ98BridH5WJpgTdysJLHpsijIFHuIhSObcd2H8NSomx4dRbRHR10urPxRsoh4j8WDrPaH4ICIGnsCwEdKEWdV0RduO-DzKwZtPlQ5tMYQKVYcgqUqTlFnsivN9B57vNiPYzZhIQHsS4Q"/>
-<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-32 bg-cream" id="procedimentos">
-<div class="max-w-7xl mx-auto px-6">
-<div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
-<span class="text-accent font-bold tracking-widest-plus text-[11px] uppercase">Protocolos Personalizados</span>
-<h2 class="font-serif text-5xl text-primary">Tratamentos Exclusivos</h2>
-<div class="w-12 h-0.5 bg-accent mx-auto mt-6"></div>
-</div>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="group bg-white p-12 border border-primary/5 hover:border-accent/50 transition-all duration-500 flex flex-col items-center text-center">
-<span class="material-symbols-outlined text-4xl text-accent mb-8 font-light">face_6</span>
-<h3 class="font-serif text-2xl mb-4 text-primary">Gerenciamento de Pele</h3>
-<p class="text-slate-500 text-sm leading-relaxed mb-8">Foco na qualidade e saúde dérmica através de Bioestimuladores de colágeno e Protocolos Protocoll.</p>
-<div class="mt-auto pt-6 border-t border-slate-50 w-full flex flex-col gap-2 text-[10px] uppercase tracking-widest font-bold text-slate-400">
-<span>Firmeza &amp; Elasticidade</span>
-<span>Textura Uniforme</span>
-</div>
-</div>
-<div class="group bg-white p-12 border border-primary/5 hover:border-accent/50 transition-all duration-500 flex flex-col items-center text-center">
-<span class="material-symbols-outlined text-4xl text-accent mb-8 font-light">humidity_mid</span>
-<h3 class="font-serif text-2xl mb-4 text-primary">Refinamento Labial</h3>
-<p class="text-slate-500 text-sm leading-relaxed mb-8">Escultura labial estratégica para devolver volume, contorno e hidratação profunda com naturalidade.</p>
-<div class="mt-auto pt-6 border-t border-slate-50 w-full flex flex-col gap-2 text-[10px] uppercase tracking-widest font-bold text-slate-400">
-<span>Escultura Personalizada</span>
-<span>Hidratação Profunda</span>
-</div>
-</div>
-<div class="group bg-white p-12 border border-primary/5 hover:border-accent/50 transition-all duration-500 flex flex-col items-center text-center">
-<span class="material-symbols-outlined text-4xl text-accent mb-8 font-light">architecture</span>
-<h3 class="font-serif text-2xl mb-4 text-primary">Arquitetura Facial</h3>
-<p class="text-slate-500 text-sm leading-relaxed mb-8">Uso preciso de Botox e Preenchimento para estruturação dos pontos de luz e sombra da face.</p>
-<div class="mt-auto pt-6 border-t border-slate-50 w-full flex flex-col gap-2 text-[10px] uppercase tracking-widest font-bold text-slate-400">
-<span>Pontos de Sustentação</span>
-<span>Efeito Top Model Look</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-32 bg-background-dark text-white relative overflow-hidden" id="depoimentos">
-<div class="absolute inset-0 opacity-10">
-<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary rounded-full blur-[120px] -mr-64 -mt-64"></div>
-<div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent rounded-full blur-[120px] -ml-64 -mb-64"></div>
-</div>
-<div class="max-w-7xl mx-auto px-6 relative z-10">
-<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-<div class="space-y-4">
-<span class="text-accent font-bold tracking-widest-plus text-[11px] uppercase">Confiança</span>
-<h2 class="font-serif text-5xl">O que dizem nossas pacientes</h2>
-</div>
-<div class="flex items-center gap-4 text-accent">
-<div class="flex gap-1">
-<span class="material-symbols-outlined fill-1">star</span>
-<span class="material-symbols-outlined fill-1">star</span>
-<span class="material-symbols-outlined fill-1">star</span>
-<span class="material-symbols-outlined fill-1">star</span>
-<span class="material-symbols-outlined fill-1">star</span>
-</div>
-<span class="text-sm tracking-widest uppercase font-bold text-white/60">Avaliação 5.0</span>
-</div>
-</div>
-<div class="grid md:grid-cols-3 gap-10">
-<div class="p-10 bg-white/5 border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-colors">
-<span class="material-symbols-outlined text-accent mb-6 opacity-40">format_quote</span>
-<p class="text-lg leading-relaxed mb-8 font-light text-white/90">"Ficou lindo! O resultado superou todas as minhas expectativas. A Dra. Samira é muito atenciosa e detalhista."</p>
-<span class="block text-xs font-bold tracking-widest uppercase text-accent">— Maria Eduarda S.</span>
-</div>
-<div class="p-10 bg-white/5 border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-colors">
-<span class="material-symbols-outlined text-accent mb-6 opacity-40">format_quote</span>
-<p class="text-lg leading-relaxed mb-8 font-light text-white/90">"Tinha muito medo de ficar artificial, mas ela me passou tanta segurança. Ficou super natural, ninguém percebeu que fiz botox!"</p>
-<span class="block text-xs font-bold tracking-widest uppercase text-accent">— Ana Paula L.</span>
-</div>
-<div class="p-10 bg-white/5 border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-colors">
-<span class="material-symbols-outlined text-accent mb-6 opacity-40">format_quote</span>
-<p class="text-lg leading-relaxed mb-8 font-light text-white/90">"A melhor profissional de Dom Pedro. A clínica é maravilhosa e o atendimento é impecável do início ao fim."</p>
-<span class="block text-xs font-bold tracking-widest uppercase text-accent">— Fernanda M.</span>
-</div>
-</div>
-</div>
-</section>
-<section class="py-32" id="contato">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 shadow-2xl overflow-hidden bg-white border border-primary/5">
-<div class="p-16 flex flex-col justify-center">
-<div class="space-y-4 mb-12">
-<span class="text-accent font-bold tracking-widest text-[11px] uppercase">Agendamentos</span>
-<h2 class="font-serif text-5xl text-primary">Onde estamos</h2>
-</div>
-<div class="space-y-10">
-<div class="flex gap-6 items-start">
-<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
-<div>
-<p class="font-serif text-xl text-primary mb-1">Clínica Oral Prime</p>
-<p class="text-slate-500 font-light leading-relaxed">Rodovia MA-256, nº 560, Centro<br/>Dom Pedro - Maranhão</p>
-</div>
-</div>
-<div class="flex gap-6 items-start">
-<span class="material-symbols-outlined text-primary text-2xl">call</span>
-<div>
-<p class="font-serif text-xl text-primary mb-1">Contato</p>
-<p class="text-slate-500 font-light">(99) 99116-0563</p>
-</div>
-</div>
-<div class="flex gap-6 items-start">
-<span class="material-symbols-outlined text-primary text-2xl">schedule</span>
-<div>
-<p class="font-serif text-xl text-primary mb-1">Horário</p>
-<p class="text-slate-500 font-light">Segunda a Sexta: 08:00 às 18:00<br/>Sábados: Sob agendamento</p>
-</div>
-</div>
-</div>
-<div class="mt-16">
-<a class="inline-flex items-center gap-4 bg-primary text-white px-10 py-5 rounded-sm font-bold text-xs hover:bg-primary/90 transition-all uppercase tracking-widest" href="https://wa.me/5599991160563">
-                            Falar pelo WhatsApp
+                        <span class="material-symbols-outlined text-white group-hover:translate-x-1 transition-transform text-sm">arrow_right_alt</span>
+                    </a>
+                    <a class="inline-flex justify-center items-center gap-2 border border-primary/30 text-primary px-7 py-5 rounded-sm font-semibold text-xs hover:bg-cream/60 transition-colors uppercase tracking-wider" href="#procedimentos">
+                        Ver Tratamentos
+                    </a>
+                </div>
+
+                <!-- Badges de credibilidade -->
+                <div class="pt-6 border-t border-primary/10 grid grid-cols-3 gap-4 text-center sm:text-left">
+                    <div>
+                        <p class="font-serif text-2xl font-bold text-primary">PEIM</p>
+                        <p class="text-[11px] text-slate-500 font-medium">Secagem de Microvasos</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-2xl font-bold text-primary">BOTOX</p>
+                        <p class="text-[11px] text-slate-500 font-medium">Estética Facial & HOF</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-2xl font-bold text-primary">PÓS-OP</p>
+                        <p class="text-[11px] text-slate-500 font-medium">Drenagem Especializada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre a Profissional -->
+    <section class="bg-white py-28 border-y border-primary/10" id="sobre">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+                <div class="lg:col-span-6 space-y-8">
+                    <div class="space-y-3">
+                        <span class="text-primary font-bold tracking-widest text-xs uppercase block">Conheça quem cuida de você</span>
+                        <h2 class="font-serif text-4xl sm:text-5xl text-primary" translate="no">Dra. Alessandra Feitosa</h2>
+                        <p class="text-sm tracking-widest text-slate-500 uppercase font-medium">Biomédica Esteta • Estética Avançada | Presidente Dutra - MA</p>
+                    </div>
+                    
+                    <div class="space-y-4 text-slate-600 font-light leading-relaxed text-base sm:text-lg">
+                        <p>
+                            Especialista dedicada à <strong>Biomedicina Estética</strong>, atuo com foco em procedimentos minimamente invasivos de alta precisão, integrando ciência, segurança clínica e um olhar artístico refinado.
+                        </p>
+                        <p>
+                            Minha missão é proporcionar resultados que realcem a autoestima e a elegância de cada pessoa, tratando queixas faciais e corporais como o surgimento de microvasos, marcas de expressão e a necessidade de recuperação pós-operatória.
+                        </p>
+                        <p>
+                            Cada plano de tratamento é 100% individualizado, respeitando a sua anatomia e seus objetivos, para que você se sinta radiante e confiante em sua própria pele.
+                        </p>
+                    </div>
+
+                    <div class="bg-cream/60 border-l-4 border-primary p-6 italic font-serif text-xl sm:text-2xl text-slate-800 relative rounded-r-md">
+                        <span class="absolute top-2 left-3 text-5xl text-primary/20 font-serif leading-none">“</span>
+                        <p class="relative z-10 pl-3">A beleza verdadeira está no equilíbrio de valorizar quem você é com segurança e sofisticação.</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 flex flex-col justify-center">
+                    <!-- Cards de Estatísticas e Especialidades -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 bg-cream border border-primary/15 rounded-md overflow-hidden mb-10 shadow-sm">
+                        <div class="stats-card text-center py-6">
+                            <span class="block text-3xl font-serif text-primary font-bold mb-1">Expert</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-500">Em PEIM & Botox</span>
+                        </div>
+                        <div class="stats-card text-center py-6">
+                            <span class="block text-3xl font-serif text-primary font-bold mb-1">Face &amp; Corpo</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-500">Estética Avançada</span>
+                        </div>
+                        <div class="stats-card text-center py-6">
+                            <span class="block text-3xl font-serif text-primary font-bold mb-1">100%</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-500">Personalizado</span>
+                        </div>
+                    </div>
+
+                    <!-- Imagem institucional complementar -->
+                    <div class="aspect-video relative overflow-hidden rounded-md shadow-xl border border-primary/10">
+                        <img 
+                            alt="Espaço Clínico Dra. Alessandra Feitosa" 
+                            class="w-full h-full object-cover hover:scale-105 transition-all duration-1000" 
+                            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80"
+                        />
+                        <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded text-xs font-semibold text-slate-800 shadow">
+                            Atendimento Exclusivo e Acolhedor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Procedimentos Exclusivos -->
+    <section class="py-28 bg-cream/70" id="procedimentos">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-primary font-bold tracking-widest-plus text-[11px] uppercase">Excelência em Cada Detalhe</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-primary">Procedimentos em Destaque</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 font-light text-base max-w-xl mx-auto">
+                    Tecnologia e técnicas estéticas consagradas para valorizar sua beleza com segurança médica e conforto.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: PEIM -->
+                <div class="group bg-white p-8 sm:p-10 rounded-md border border-primary/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center">
+                    <div class="size-16 rounded-full bg-cream flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">water_drop</span>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-primary">PEIM</h3>
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Secagem de Microvasos</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-8 font-light">
+                        Procedimento Injetável para Microvasos nas pernas. Devolva a uniformidade, a leveza e a liberdade de exibir suas pernas sem incômodos estéticos.
+                    </p>
+                    <div class="mt-auto pt-6 border-t border-slate-100 w-full flex flex-col gap-2 text-[10px] uppercase tracking-widest font-bold text-slate-500">
+                        <span class="bg-background-light py-1.5 px-3 rounded">Pernas Uniformes</span>
+                        <span class="bg-background-light py-1.5 px-3 rounded">Sem Cirurgia</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Botox & Harmonização -->
+                <div class="group bg-white p-8 sm:p-10 rounded-md border border-primary/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center">
+                    <div class="size-16 rounded-full bg-cream flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">face_6</span>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-primary">BOTOX</h3>
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Toxina Botulínica</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-8 font-light">
+                        Prevenção e suavização de rugas dinâmicas (testa, pés de galinha e glabela), proporcionando um semblante descansado, elegante e rejuvenescido.
+                    </p>
+                    <div class="mt-auto pt-6 border-t border-slate-100 w-full flex flex-col gap-2 text-[10px] uppercase tracking-widest font-bold text-slate-500">
+                        <span class="bg-background-light py-1.5 px-3 rounded">Sem Rugas Marcadas</span>
+                        <span class="bg-background-light py-1.5 px-3 rounded">Aspecto Natural</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Pós-Operatório -->
+                <div class="group bg-white p-8 sm:p-10 rounded-md border border-primary/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center">
+                    <div class="size-16 rounded-full bg-cream flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">spa</span>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-primary">Pós-Operatório</h3>
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Drenagem Especializada</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-8 font-light">
+                        Drenagem linfática manual específica para recuperação de cirurgias plásticas, reduzindo o inchaço, evitando fibroses e acelerando a cicatrização.
+                    </p>
+                    <div class="mt-auto pt-6 border-t border-slate-100 w-full flex flex-col gap-2 text-[10px] uppercase tracking-widest font-bold text-slate-500">
+                        <span class="bg-background-light py-1.5 px-3 rounded">Recuperação Segura</span>
+                        <span class="bg-background-light py-1.5 px-3 rounded">Alívio de Edemas</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Estética Facial e Corporal -->
+                <div class="group bg-white p-8 sm:p-10 rounded-md border border-primary/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center">
+                    <div class="size-16 rounded-full bg-cream flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">auto_awesome</span>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-primary">Estética Integrada</h3>
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">Facial e Corporal</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-8 font-light">
+                        Bioestimuladores de colágeno, hidratação profunda, revitalização e protocolos corporais para definição e saúde integral da pele.
+                    </p>
+                    <div class="mt-auto pt-6 border-t border-slate-100 w-full flex flex-col gap-2 text-[10px] uppercase tracking-widest font-bold text-slate-500">
+                        <span class="bg-background-light py-1.5 px-3 rounded">Firmeza &amp; Viço</span>
+                        <span class="bg-background-light py-1.5 px-3 rounded">Estética Avançada</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner de Ação -->
+            <div class="mt-16 bg-white p-8 sm:p-12 rounded-md border border-primary/20 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div class="space-y-2">
+                    <h4 class="font-serif text-2xl text-primary font-bold">Dúvida sobre o procedimento ideal para você?</h4>
+                    <p class="text-slate-600 font-light">Entre em contato direto pelo WhatsApp e agende sua avaliação individualizada.</p>
+                </div>
+                <a class="bg-primary text-white px-8 py-4 rounded-sm font-bold text-xs hover:bg-primary-dark transition-all uppercase tracking-widest whitespace-nowrap shadow-lg shadow-primary/20" href="https://wa.me/5599981192817?text=Ol%C3%A1%2C%20Dra.%20Alessandra!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20procedimentos." target="_blank">
+                    Falar com a Dra. Alessandra
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos / Prova Social -->
+    <section class="py-28 bg-background-dark text-white relative overflow-hidden" id="depoimentos">
+        <div class="absolute inset-0 opacity-15">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary rounded-full blur-[140px] -mr-64 -mt-64"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent rounded-full blur-[140px] -ml-64 -mb-64"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+                <div class="space-y-3">
+                    <span class="text-accent font-bold tracking-widest-plus text-[11px] uppercase">Confiança &amp; Resultados</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl">O que dizem nossas pacientes</h2>
+                </div>
+                <div class="flex items-center gap-3 bg-white/10 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/15">
+                    <div class="flex gap-1 text-amber-300">
+                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                        <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                    </div>
+                    <span class="text-xs tracking-widest uppercase font-bold text-white/90">Avaliação 5.0 • Excelência</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Depoimento 1: PEIM -->
+                <div class="p-8 sm:p-10 bg-white/5 border border-white/10 rounded-md backdrop-blur-sm group hover:bg-white/10 transition-all">
+                    <span class="material-symbols-outlined text-primary-light mb-6 opacity-60 text-3xl">format_quote</span>
+                    <p class="text-base sm:text-lg leading-relaxed mb-6 font-light text-white/90">
+                        "Fiz o tratamento de PEIM para os vasinhos das minhas pernas e o resultado foi maravilhoso! Profissional muito atenciosa e detalhista aqui em Presidente Dutra."
+                    </p>
+                    <span class="block text-xs font-bold tracking-widest uppercase text-accent">— Camila R. • Paciente PEIM</span>
+                </div>
+
+                <!-- Depoimento 2: Botox -->
+                <div class="p-8 sm:p-10 bg-white/5 border border-white/10 rounded-md backdrop-blur-sm group hover:bg-white/10 transition-all">
+                    <span class="material-symbols-outlined text-primary-light mb-6 opacity-60 text-3xl">format_quote</span>
+                    <p class="text-base sm:text-lg leading-relaxed mb-6 font-light text-white/90">
+                        "O botox da Dra. Alessandra ficou perfeito e super natural! Meu rosto ficou leve, descansado e sem rugas marcadas. Recomendo de olhos fechados!"
+                    </p>
+                    <span class="block text-xs font-bold tracking-widest uppercase text-accent">— Juliana S. • Toxina Botulínica</span>
+                </div>
+
+                <!-- Depoimento 3: Pós-Operatório -->
+                <div class="p-8 sm:p-10 bg-white/5 border border-white/10 rounded-md backdrop-blur-sm group hover:bg-white/10 transition-all">
+                    <span class="material-symbols-outlined text-primary-light mb-6 opacity-60 text-3xl">format_quote</span>
+                    <p class="text-base sm:text-lg leading-relaxed mb-6 font-light text-white/90">
+                        "Fiz todo o meu pós-operatório com a Dra. Alessandra. O cuidado com a drenagem e as orientações foram fundamentais para minha recuperação sem dores e sem fibrose."
+                    </p>
+                    <span class="block text-xs font-bold tracking-widest uppercase text-accent">— Renata M. • Pós-Operatório</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Localização e Contato -->
+    <section class="py-28 bg-white" id="contato">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 shadow-2xl rounded-lg overflow-hidden bg-white border border-primary/15">
+                <div class="p-8 sm:p-14 lg:p-16 flex flex-col justify-center">
+                    <div class="space-y-3 mb-10">
+                        <span class="text-primary font-bold tracking-widest text-xs uppercase block">Atendimento com Hora Marcada</span>
+                        <h2 class="font-serif text-4xl sm:text-5xl text-primary">Onde Estamos</h2>
+                        <p class="text-slate-500 font-light text-sm">Localização de fácil acesso no centro de Presidente Dutra - MA.</p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-5 items-start">
+                            <div class="size-12 rounded-full bg-cream flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                            </div>
+                            <div>
+                                <p class="font-serif text-lg text-primary font-bold mb-1">Clínica Dra. Alessandra Feitosa</p>
+                                <p class="text-slate-600 font-light leading-relaxed text-sm">
+                                    Av. Campo Dantas, 1778 - Campos Dantas<br/>
+                                    Presidente Dutra - MA, CEP: 65760-000
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-5 items-start">
+                            <div class="size-12 rounded-full bg-cream flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary text-xl">call</span>
+                            </div>
+                            <div>
+                                <p class="font-serif text-lg text-primary font-bold mb-1">Telefone / WhatsApp</p>
+                                <p class="text-slate-600 font-light text-sm">(99) 98119-2817</p>
+                                <a href="https://wa.me/5599981192817" target="_blank" class="text-xs text-primary font-semibold underline mt-1 inline-block">Clique aqui para enviar mensagem</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-5 items-start">
+                            <div class="size-12 rounded-full bg-cream flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+                            </div>
+                            <div>
+                                <p class="font-serif text-lg text-primary font-bold mb-1">Horário de Atendimento</p>
+                                <p class="text-slate-600 font-light text-sm">
+                                    Segunda a Sexta: 08:00 às 18:00<br/>
+                                    Sábados: Atendimento mediante agendamento prévio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <a class="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-sm font-bold text-xs hover:bg-primary-dark transition-all uppercase tracking-widest shadow-lg shadow-primary/20 w-full sm:w-auto" href="https://wa.me/5599981192817?text=Ol%C3%A1%2C%20Dra.%20Alessandra!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank">
+                            <span class="material-symbols-outlined text-sm">chat</span>
+                            Falar Diretamente pelo WhatsApp
                         </a>
-</div>
-</div>
-<div class="h-[500px] lg:h-auto relative bg-slate-100 grayscale hover:grayscale-0 transition-all duration-700">
-<iframe allowfullscreen="" class="absolute inset-0 w-full h-full border-0" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15914.545084920215!2d-44.4532!3d-5.0211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDEnMTYuMCJTIDQ0wrAyNycxMS41Ilc!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr">
-</iframe>
-<div class="absolute inset-0 pointer-events-none bg-primary/5"></div>
-</div>
-</div>
-</div>
-</section>
+                    </div>
+                </div>
+
+                <!-- Mapa Google Maps Presidente Dutra - MA -->
+                <div class="h-[400px] lg:h-auto min-h-[380px] relative bg-slate-100">
+                    <iframe 
+                        allowfullscreen="" 
+                        class="absolute inset-0 w-full h-full border-0" 
+                        loading="lazy" 
+                        title="Localização Clínica Dra. Alessandra Feitosa"
+                        src="https://maps.google.com/maps?q=Av.+Campo+Dantas,+1778,+Presidente+Dutra+-+MA&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
-<footer class="bg-background-dark text-white/50 py-20 border-t border-white/5">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-center gap-12">
-<div class="text-center md:text-left">
-<span class="font-serif text-2xl text-white font-bold tracking-tight uppercase" translate="no">Dra. Samira Lourenço</span>
-<div class="flex gap-6 mt-6 justify-center md:justify-start">
-<a class="hover:text-accent transition-colors" href="#">Instagram</a>
-<a class="hover:text-accent transition-colors" href="#">WhatsApp</a>
-<a class="hover:text-accent transition-colors" href="#">Facebook</a>
-</div>
-</div>
-<div class="text-center md:text-right space-y-2">
-<p class="text-[10px] tracking-[0.3em] uppercase">CRO-MA 4852 | CNPJ 24.567.890/0001-42</p>
-<p class="text-[10px] tracking-[0.3em] uppercase">© 2024 Dra. Samira Lourenço. All Rights Reserved.</p>
-<p class="text-[9px] tracking-[0.2em] uppercase mt-4 text-white/30">Desenvolvido com excelência clínica</p>
-</div>
-</div>
-</div>
+
+<!-- Footer -->
+<footer class="bg-background-dark text-white/60 py-16 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-2xl text-white font-bold tracking-tight uppercase" translate="no">Dra. Alessandra Feitosa</span>
+                <p class="text-xs text-white/50 tracking-widest uppercase mt-1">Biomédica Esteta • Estética Avançada</p>
+                <div class="flex gap-6 mt-5 justify-center md:justify-start text-xs font-semibold uppercase tracking-wider">
+                    <a class="text-accent hover:text-white transition-colors" href="https://www.instagram.com/dra.alessandra_feitosa/" target="_blank">Instagram</a>
+                    <a class="text-accent hover:text-white transition-colors" href="https://wa.me/5599981192817" target="_blank">WhatsApp</a>
+                    <a class="text-accent hover:text-white transition-colors" href="https://linktr.ee/clinicaalessandrafeitosa" target="_blank">Linktree</a>
+                </div>
+            </div>
+
+            <div class="text-center md:text-right space-y-1">
+                <p class="text-[11px] tracking-[0.2em] uppercase text-white/70">Presidente Dutra - Maranhão</p>
+                <p class="text-[10px] tracking-[0.2em] uppercase text-white/40">© 2026 Dra. Alessandra Feitosa. Todos os direitos reservados.</p>
+                <p class="text-[9px] tracking-[0.2em] uppercase text-primary-light/60 mt-2">Biomedicina Estética de Alta Precisão</p>
+            </div>
+        </div>
+    </div>
 </footer>
-<a class="fixed bottom-8 right-8 z-50 bg-primary text-accent p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center border border-accent/20" href="https://wa.me/5599991160563" target="_blank">
-<svg class="size-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
-</svg>
+
+<!-- Botão Flutuante do WhatsApp -->
+<a class="fixed bottom-8 right-8 z-50 bg-primary text-white p-4 rounded-full shadow-2xl hover:scale-110 hover:bg-primary-dark transition-all flex items-center justify-center border border-white/20" href="https://wa.me/5599981192817?text=Ol%C3%A1%2C%20Dra.%20Alessandra!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" title="Falar no WhatsApp">
+    <svg class="size-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+    </svg>
 </a>
 
+<!-- Cinematic Curtain Transition -->
 <div id="cinematic-curtain">
-  <span class="logo" translate="no">Samira Lourenço</span>
+    <span class="logo" translate="no">Dra. Alessandra Feitosa</span>
 </div>
 
+<!-- Scripts de Animação e Interação -->
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollToPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/SplitText.min.js"></script>
 <script src="script.js"></script>
 
-</body></html>
+</body>
+</html>
